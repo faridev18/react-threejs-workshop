@@ -1,7 +1,7 @@
 
 import { Canvas } from '@react-three/fiber'
 import './App.css'
-import { OrbitControls } from '@react-three/drei'
+import { Environment, OrbitControls } from '@react-three/drei'
 import { useState } from 'react';
 import { Car } from './components/Car';
 
@@ -21,12 +21,14 @@ function App() {
 
         <ambientLight intensity={3} />
 
+        <Environment preset="forest" />
+
         <directionalLight
           position={[5, 5, 5]}
           intensity={1}
         />
 
-        <Car scale={15} wireframe />
+        <Car position-y={-1} scale={1} wireframe />
 
 
       </Canvas>
